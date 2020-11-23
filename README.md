@@ -31,3 +31,7 @@ Once installed the dependencies, run the following command:
 `npm install`
 
 Continue runing `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+![Homepage](images/first.jpeg)
+![Station detail](images/second.jpeg)
+![Add a new station](images/third.jpeg)
