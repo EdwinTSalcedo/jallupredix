@@ -1,0 +1,152 @@
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <button class="btn btn-default btn-fill" [routerLink]="['/editar-usuarios']">
+                                <span class="btn-label">
+                                    <i class="fa fa-arrow-left"></i>
+                                </span>
+                                Gestión de Usuarios
+                            </button>
+
+                        </div>
+                        <div class="content">
+
+                            <form #formUsuario="ngForm" id="form-producto" (ngSubmit)="onSubmit()">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label>Empresa<span class="start">*</span></label>
+                                            <input type="text" #empresa="ngModel" name="empresa" [(ngModel)]="usuario.empresa" class="form-control"  placeholder="Empresa" >
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5 col-md-offset-1">
+                                        <div class="form-group">
+                                            <label>Correo Electronico<span class="start">*</span></label>
+                                            <input type="email" #correo="ngModel" name="correo" [(ngModel)]="usuario.correo" class="form-control"  placeholder="Correo Electronico" >
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label>Nombre(s)<span class="start">*</span></label>
+                                            <input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="usuario.nombre" class="form-control"  placeholder="Nombre(s)" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-md-offset-1">
+                                        <div class="form-group">
+                                            <label>Apellido(s)<span class="start">*</span></label>
+                                            <input type="text" #apellido="ngModel" name="apellido" [(ngModel)]="usuario.apellido" class="form-control"  placeholder="Apellido(s)" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Carnet de Identidad -->
+                                <!-- 
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>CI<span class="start">*</span></label>
+                                        <input type="text" #ci="ngModel" name="nombre" [(ngModel)]="usuario.ci" class="form-control"  placeholder="Apellido(s)" >
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label>Extension</label>
+                                        <select class="form-control selectpicker">
+                                            <option>LP</option>
+                                            <option>OR</option>
+                                            <option>CBBA</option>
+                                            <option>STA</option>
+                                            <option>PO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            -->
+                            <!-- Fin de carnet de -->
+
+
+                            <div class="row">
+
+                                <div class="col-md-5 ">
+                                    <div class="form-group">
+                                        <label>Telefono</label>
+                                        <input type="text" #telefono="ngModel" name="telefono" [(ngModel)]="usuario.telefono" class="form-control" placeholder="Telefono">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="header">
+                                <h4 class="title">Grupo Usuario</h4>
+                            </div>
+
+                            <!--  -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+
+                                        <br>
+                                        <select #grupousuario="ngModel" name="grupousuario" [(ngModel)]="usuario.grupousuario" class="form-control"  >
+                                            <option value="" disabled selected>Asignale una categoria </option>
+                                            <option class="optionselected" value="Administrador" >Administrador</option>
+                                            <option class="optionselected" value="Operador">Operador</option>
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <hr>
+
+                            <div class="header">
+                                <h4 class="title">Establecer Contraseña</h4>
+                            </div>
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-3 ">
+                                    <div class="form-group">
+                                        Establecer Contraseña:
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <input type="password" class="form-control" placeholder="" value="" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 ">
+                                    <div class="form-group">
+                                        Confirmar Contraseña:
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <input type="password" class="form-control" placeholder="" value="" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-fill btn-primary ">{{titulo}}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+    </div>
+</div>

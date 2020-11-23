@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+.start{
+	color: #E48B8B;
+}
+th{
+	font-weight: bold !important;
+	color: #434343 !important;
+
+}
+tfoot>tr>td {
+	font-weight:normal !important;
+	color: #fafafa !important;
+}
+.nav-tabs li a{
+	color: steelblue !important;
+}
+.nav-tabs li{
+	background: #B6B6B6;
+}

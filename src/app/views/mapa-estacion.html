@@ -1,0 +1,39 @@
+<style type="text/css">
+	p{font-size: 0.9em;
+		margin: 0.2px;}
+		h6{
+			font-size: 1.5em;
+		}
+	</style>
+	
+	<div class="container-fluid">
+		
+
+		<div class="content">
+			<div class="card">	
+				<!-- <div id="satelliteMap" class="map map-big"></div> -->
+				<!--             <img src="../assets/img/mapaSatelital.png" style="width: 100%" class=""> -->
+
+
+				<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" mapTypeId="{{type}}" >
+					<agm-marker *ngFor="let m of markers"
+
+					[latitude]="m.lat"
+					[longitude]="m.lng"
+					>
+
+					<agm-info-window>
+						<h6 class="text-center"> <strong>{{m.reds}}</strong></h6>
+						<p>GPRS: {{m.gprs}}</p>
+						<p>Tipo Estacion: {{m.tipoestacion}}</p>
+						<p><em>Lat: {{m.lat}}, Long: {{m.lng}}</em></p>
+						<p class="text-center">
+							<a href="" [routerLink]="['/grafica-mensual']"  class="btn btn-primary btn-fill btn-xs">Mas Detalles</a>
+
+						</p>
+					</agm-info-window>
+				</agm-marker>
+			</agm-map>
+		</div>
+	</div>
+</div>

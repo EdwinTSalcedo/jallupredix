@@ -1,0 +1,97 @@
+
+<div class="content">
+<div class="container-fluid">
+<div class="row">
+<div class="row">
+<div class="col-md-12">
+<div class="card">
+<div class="header">
+<button class="btn btn-default btn-fill" [routerLink]="['/estacion']">
+<span class="btn-label">
+<i class="fa fa-arrow-left"></i>
+</span>
+Registros
+</button>
+
+</div>
+<div class="content">
+
+<form #formUsuario="ngForm" id="form-usuario" (ngSubmit)="onSubmit()">
+<div class="row">
+<div class="col-md-5">
+<div class="form-group">
+    <label>Lluvia<span class="start">*</span></label>
+    <input type="text" #lluvia="ngModel" name="lluvia" [(ngModel)]="dispositivo.precipitacion" class="form-control"  placeholder="Precipitacion" >
+</div>
+</div>
+
+<div class="col-md-5 col-md-offset-1">
+<div class="form-group">
+    <label>Temperatura<span class="start">*</span></label>
+    <input type="text" #temperatura="ngModel" name="temperatura" [(ngModel)]="dispositivo.temperatura" class="form-control"  placeholder="Temperatura" >
+
+</div>
+</div>
+</div>
+<!-- Fila -->
+<div class="row">
+<div class="col-md-5">
+<div class="form-group">
+    <label>Hora y Fecha<span class="start">*</span></label>
+    <input  type="text" #horafecha [(ngModel)]="dispositivo.horafecha" class="form-control datetimepicker hf" name="horafecha" placeholder="Elegir la fecha"/>
+
+</div>
+</div>
+
+<div class="col-md-5 col-md-offset-1">
+<div class="form-group">
+    <label>Radiacion Solar<span class="start">*</span></label>
+    <input type="text" #radiacionsolar="ngModel" name="radiacionsolar" [(ngModel)]="dispositivo.radiacionsolar" class="form-control"  placeholder="Radiacion Solar" >
+
+</div>
+</div>
+</div>
+<!-- Fin fila -->
+<!-- Fila -->
+<div class="row">
+<div class="col-md-5">
+<div class="form-group">
+    <label>Humedad Suelo <span class="start">*</span></label>
+    <input type="text" #humedadsuelo="ngModel" name="humedadsuelo" [(ngModel)]="dispositivo.humedadsuelo" class="form-control"  placeholder="Humedad Suelo" >
+</div>
+</div>
+
+<div class="col-md-5 col-md-offset-1">
+<div class="form-group">
+    <label>Humedad Ambiente <span class="start">*</span></label>
+    <input type="text" #humedadambiente="ngModel" name="humedadambiente" [(ngModel)]="dispositivo.humedadambiente" class="form-control"  placeholder="Humedad Ambiente" >
+
+</div>
+</div>
+</div>
+<!-- Fin fila -->
+<!-- Fila -->
+<div class="row">
+<div class="col-md-5">
+<div class="form-group">
+    <label>Altura <span class="start">*</span></label>
+    <input type="text" #altura="ngModel" name="altura" [(ngModel)]="dispositivo.altura" class="form-control"  placeholder="Altura" >
+</div>
+</div>
+
+
+</div>
+<!-- Fin fila -->
+
+<button type="submit" class="btn btn-fill btn-primary ">{{titulo}}</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<hr>
+
+</div>
+</div>
+</div>

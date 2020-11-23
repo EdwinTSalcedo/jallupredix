@@ -1,0 +1,88 @@
+ <div class="content">
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="content">
+          <h2>{{titulo}}</h2>
+          <div class="toolbar">
+            <!--        Here you can write extra buttons/actions for the toolbar              -->
+            <div class="row">
+              <div class="col-md-3">
+                <button class="btn btn-default btn-fill" [routerLink]="['/grafica-mensual']">
+                 Graficas
+               </button>
+             </div>
+             <div class="col-md-2 col-md-offset-7" style="text-align: right">
+              <!-- <button class="btn btn-info btn-fill" > Exportar</button> -->
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3">
+              <button class="btn btn-success btn-fill" [routerLink]="['/dispositivo-adicionar']">
+                Adicionar de Registros
+              </button>
+            </div>
+            <div class="col-md-2 col-md-offset-7" style="text-align: right">
+              <!-- <button class="btn btn-info btn-fill" > Exportar</button> -->
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="table-responsive">
+          <table id="datatables" class="table table-striped table-bordered table-hover" cellspacing="1" width="100%">
+            <thead>
+              <tr>
+                <th>Lluvia</th>
+                <th>Hora Fecha</th>
+                <th>Temperatura</th>
+                <th>Radiacion Solar</th>                                 
+                <th>Humedad del Suelo</th>
+                <th>Humedad del Ambiente</th>
+                <th>Altura</th>
+
+                <th class="disabled-sorting text-right">Acciones</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Lluvia</th>
+                <th>Hora Fecha</th>
+                <th>Temperatura</th>
+                <th>Radiacion Solar</th>                                 
+                <th>Humedad del Suelo</th>
+                <th>Humedad del Ambiente</th>
+                <th>Altura</th>
+                <th class="text-right">Actions</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr *ngFor="let dispositivo of dispositivos">
+
+              <td>{{dispositivo.precipitacion}}</td>
+                <td>{{dispositivo.horafecha}}</td>
+                <td>{{dispositivo.temperatura}}</td>
+                <td>{{dispositivo.radiacionsolar}}</td>
+                <td>{{dispositivo.humedadsuelo}}</td>
+                <td>{{dispositivo.humedadambiente}}</td>
+                <td>{{dispositivo.altura}}</td>
+
+                <td class="text-right">
+                    <!-- <a class="btn btn-simple btn-primary btn-icon" ><i class="fa fa-table" style="font-size: 1.5em"></i></a>
+                    <a class="btn btn-simple btn-info btn-icon" [routerLink]="['/grafica']"><i class="fa fa-line-chart" style="font-size: 1.5em"></i></a> -->
+                    <a [routerLink]="['/editar-dispositivo',dispositivo.id]"  class="btn btn-simple btn-warning btn-icon edit"><i class="fa fa-edit" style="font-size: 1.5em"></i></a>
+                    <a (click)="borrarConfirm(dispositivo.id)" class="btn btn-simple btn-danger btn-icon remove"><i class="fa fa-times" style="font-size: 1.5em"></i></a>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div><!-- end content-->
+      </div><!--  end card  -->
+    </div> <!-- end col-md-12 -->
+  </div> <!-- end row -->
+
+</div>
+</div>

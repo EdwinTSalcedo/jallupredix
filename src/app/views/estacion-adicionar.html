@@ -1,0 +1,166 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Agregar Estacion Meteorologica</h2>
+                        </div>
+                        <div class="content">
+                            <button class="btn btn-default btn-fill" [routerLink]="['/estaciones']">
+                                <span class="btn-label"><i class="fa fa-arrow-left"></i></span>Gestión de estaciones</button>
+                                <br><br><br>
+                                <!-- Inicio Formulario -->
+                                <form #formEstacion="ngForm" id="form-estacion" (ngSubmit)="onSubmit()">
+
+                                    <div class="row">
+                                        <div class="col-md-11">
+                                            <div class="form-group">
+                                                <label>Nro. Serie</label>
+                                                <input type="text"  class="form-control" name="nroserie" #nroserie="ngModel" [(ngModel)]="estacion.nroserie">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- DatePickers -->
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+
+                                               <label>Fecha de Instalación</label>
+                                               <div class="form-group">
+                                                <input  type="text" #fechainstalacion [(ngModel)]="estacion.fechainstalacion" class="form-control datepicker fi" name="fechainstalacion" placeholder="Elegir la fecha"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5 col-md-offset-1">
+                                        <div class="form-group">
+                                            <label>Fecha de Reposicion</label>
+                                            <div class="form-group">
+                                                <input #fechareposicion [(ngModel)]="estacion.fechareposicion" type="text" class="form-control datepicker fr" name="fechareposicion" placeholder="Elegir la fecha"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fin Date pickers -->
+
+                                <!-- Gprs -->
+                                <div class="row">
+
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label>GPRS</label>
+                                            <input type="numer" #gprs class="form-control" name="gprs" [(ngModel)]="estacion.gprs">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+
+                                    </div>
+
+                                </div>
+                                <!-- Fin GPRS -->
+                                <!-- Latitud Longitud Mapa -->
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Latitud</label>
+                                            <input type="text"  name="latitud" class="form-control"   value="{{mlat}}" *ngIf="mlat">
+                                            <input type="text"  class="form-control"  value="" *ngIf="!mlat">
+                                            <label>Longitud</label>
+                                            <input type="text"  name="longitud" class="form-control"  value="{{mlng}}" *ngIf="mlng">
+                                            <input type="text"  class="form-control" *ngIf="!mlng">
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-6 col-md-offset-1">
+                                        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" mapTypeId="{{type}}" (mapClick)="mapClicked($event)">
+
+                                            <div *ngIf="mlat">
+                                                <agm-marker #latitud [(ngModel)]="estacion.latitud" #longitud [(ngModel)]="estacion.longitud" [latitude]="mlat" [longitude]="mlng" [label]="label">
+
+
+                                                </agm-marker>
+                                            </div>
+                                            <div *ngIf="!mlat">
+
+                                            </div>
+
+
+                                        </agm-map> 
+                                    </div>
+                                </div>
+                                <!-- Fin Latitud Longitud Mapa -->
+
+
+                                <!-- Tipo estacion -->
+
+                                <div class="row">
+
+
+                                    <div class="col-md-5">
+                                        <div class="header">
+                                            <h4 class="title">Tipo de Estación</h4>
+                                        </div>
+                                        <div class="form-group">
+                                            <label></label>
+                                            <select #tipoestacion="ngModel" name="tipoestacion" class="form-control selectpicker" [(ngModel)]="estacion.tipoestacion">
+                                                <option value="" disabled selected>Asigne una categoria </option>
+                                                <option value="Automatica">Automática</option>
+                                                <option value="Manual">Manual</option>
+                                                <option value="Prototipo">Prototipo</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fin tipo estacion -->
+
+                                <hr>
+                                <!-- Redes monitoreo -->
+                                <div class="header">
+                                    <h4 class="title">Redes de Monitoreo</h4>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group ">
+
+                                            <br>
+                                            <select #redesmonitoreo="ngModel" name="redesmonitoreo" class="form-control selectpicker" [(ngModel)]="estacion.redesmonitoreo">
+                                                <option value="" disabled selected>Asigne una red </option>
+                                                <option>EPSAS</option>
+                                                <option>SENAMHI</option>
+                                                <option>Red 1</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!-- Fin redes monitoreo -->
+                                <hr>
+
+
+                                <button type="submit" class="btn btn-fill btn-primary ">{{titulo}}</button>
+                            </form>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+        </div>
+    </div>
