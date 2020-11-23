@@ -1,28 +1,33 @@
-# JalluPredixWebapp
+# JalluPredix
+## **Overview**
+JalluPredix is an automatic system for real-time rainfall monitoring and prediction in Bolivia. It consists of two main parts: 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
+*   An IoT rain gauge built with Arduino and 3D printing
+*   A webapp developed with MeanJS.
 
-## Development server
+Since the device was initially meant to work in remote Bolivian towns and villages, the device has a GSM/GPRS component that sends the data every 24 hours. This collected data is processed with Python, Pandas, and Scikit-learn to make predictions using the ARIMA model for every weather station. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Data from public rain gauges takes an important role as the project aims to provide accurate predictions correlating data from different sources. 
 
-## Code scaffolding
+## **Dependencies**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+### <ins> WebAPP </ins>
+- MongoDB
+- Angular CLI 1.2
+- Express
+- NodeJS
 
-## Build
+### <ins> Machine Learning </ins>
+- Python 3
+- Jupyter Notebook
+- Pandas
+- Numpy
+- Matplotlib
+- Selenium
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## **Installation**
 
-## Running unit tests
+Once installed the dependencies, run the following command: 
+`npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Continue runing `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
