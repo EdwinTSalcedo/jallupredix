@@ -1,4 +1,4 @@
-# JalluPredix
+# JalluPredix: Automatic system for real-time rainfall monitoring and prediction in Bolivia
 ## **Overview**
 JalluPredix is an automatic system for real-time rainfall monitoring and prediction in Bolivia. It consists of two main parts: 
 
